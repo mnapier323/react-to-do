@@ -4,8 +4,8 @@
 	 render() {
      return (
        <li>
-         <input type="checkbox" checked={ this.props.isCompleted } />
-         <span>{ this.props.description }</span>
+         <input type="checkbox" checked={ this.props.isCompleted } onChange={ this.props.toggleComplete } /> <span>{ this.props.description }      </span>
+		 <button type="button" onClick={ this.props.deleteToDo }>Delete</button>
        </li>
 	   );
    }
