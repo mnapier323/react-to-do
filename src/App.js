@@ -36,14 +36,12 @@ class App extends Component {
   }
   
   deleteToDo(index){
-	  console.log('Delete Clicked');
-	  const todos = this.state.todos.slice();
-	  const todo = todos[index];
-	  console.log(index)
-	  const result = todos.splice(index,1);
-	  console.log(result)
-	  this.setState({todos: todos})
-	  }
+	  console.log('Delete Clicked', index);
+	  const newTodoList = this.state.todos.filter(deleted => {
+		  return deleted !== this.state.todos[index]; 
+		  });		  
+	  this.setState({ todos: [...newTodoList] });
+  }
  
    
   render() {
